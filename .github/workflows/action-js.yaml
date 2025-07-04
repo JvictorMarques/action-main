@@ -1,0 +1,24 @@
+name: Usando Action JavaScript
+on:
+  issues:
+    types: [opened]
+  pull_request:
+    types: [opened]
+
+jobs:
+  usando-action:
+    name: Executando Action JavaScript
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+      pull-requests: write
+    steps:
+      - name: Adicionando comentário
+        uses: JvictorMarques/action-js@main
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          issue_id: ${{ github.event.issue.number }}
+          comment: |
+            Olá, @${{ github.actor }}! Obrigado por abrir uma issue. 
+            Estamos analisando o seu problema e em breve daremos um retorno.
+            Se você tiver mais informações, sinta-se à vontade para adicionar um comentário.
