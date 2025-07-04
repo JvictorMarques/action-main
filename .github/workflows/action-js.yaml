@@ -14,10 +14,10 @@ jobs:
       pull-requests: write
     steps:
       - name: Adicionando comentário
-        uses: JvictorMarques/action-js@main
+        uses: JvictorMarques/actions-js@main
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          issue_id: ${{ github.event.issue.number }}
+          issueId: ${{ github.event.issue.number }}
           comment: |
             Olá, @${{ github.actor }}! Obrigado por abrir uma issue. 
             Estamos analisando o seu problema e em breve daremos um retorno.
