@@ -1,7 +1,7 @@
 name: Usando Action JavaScript
 on:
   issues:
-    types: [opened]
+    types: [opened,reopened]
   pull_request:
     types: [opened]
 
@@ -17,7 +17,7 @@ jobs:
         uses: JvictorMarques/actions-js@main
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          issueId: ${{ github.event.issue.number }}
+          issue-id: ${{ github.event.issue.number }}
           comment: |
             Olá, @${{ github.actor }}! Obrigado por abrir uma issue. 
             Estamos analisando o seu problema e em breve daremos um retorno.
