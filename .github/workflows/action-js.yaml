@@ -1,10 +1,10 @@
 name: Usando Action JavaScript
 on:
-  issues:
-    types: [opened,reopened]
-  pull_request:
-    types: [opened]
-
+  # issues:
+  #   types: [opened,reopened]
+  # pull_request:
+  #   types: [opened]
+  workflow_dispatch:
 jobs:
   usando-action:
     name: Executando Action JavaScript
