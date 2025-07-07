@@ -1,4 +1,4 @@
-name: Usando Action JavaScript
+name: Usando Composite Action
 on:
   issues:
     types: [opened,reopened]
@@ -7,7 +7,7 @@ on:
 
 jobs:
   usando-action:
-    name: Executando Action JavaScript
+    name: Executando Composite Action
     runs-on: ubuntu-latest
     permissions:
       issues: write
