@@ -1,0 +1,24 @@
+name: Usando Composite Action
+on:
+  issues:
+    types: [opened,reopened]
+  pull_request:
+    types: [opened]
+
+jobs:
+  usando-action:
+    name: Executando Composite Action
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+      pull-requests: write
+    steps:
+      - name: Adicionando comentário
+        uses: JvictorMarques/composite-action@main
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          issue-id: ${{ github.event.issue.number }}
+          comment: |
+            Olá, @${{ github.actor }}! Obrigado por abrir uma issue. 
+            Estamos analisando o seu problema e em breve daremos um retorno.
+            Se você tiver mais informações, sinta-se à vontade para adicionar um comentário.
