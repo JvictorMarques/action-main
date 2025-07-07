@@ -18,7 +18,4 @@ jobs:
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           issue-id: ${{ github.event.issue.number }}
-          comment: |
-            Olá, @${{ github.actor }}! Obrigado por abrir uma issue. 
-            Estamos analisando o seu problema e em breve daremos um retorno.
-            Se você tiver mais informações, sinta-se à vontade para adicionar um comentário.
+          comment: Teste
